@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title></title>
+	<style>
+.col-100 {
+	width:100%;
+	float:left;
+	padding-top:2px;
+}
+.col-50 {
+	width:50%;
+	float:left;
+	padding-top:2px;
+}
+.col-25 {
+	width:25%;
+	/*float:left;*/
+	padding-top:2px;
+}
+.col-20 {
+	width:20%;
+	float:left;
+	padding-top:2px;
+}
+.col-10 {
+	width:10%;
+	float:left;
+	padding-top:2px;
+}
+.col-75 {
+	width:75%;
+	float:left;
+	padding-top:2px;
+}
+.col-35 {
+	width:35%;
+	float:left;
+	padding-top:2px;
+}
+.col-30 {
+	width:30%;
+	float:left;
+	padding-top:2px;
+}
+.col-40 {
+	width:40%;
+	float:left;
+	padding-top:2px;
+}
+input[type="text"],input[type="number"],input[type="date"],input[type="file"],input[type="video"] {
+	width:100%;
+	height: 23px;
+	border:1px solid #ccc;
+	resize:vertical;
+	outline: none;
+    border: none;
+    background: lightgrey;
+    border-radius: 6px;
+    font-family: monospace;
+    color: #484863;;
+    font-weight: bold;
+}
+	h1{
+			background-color: powderblue;
+		}
+input[type="submit"]:hover,input[type="reset"]:hover {
+		background-color: red;
+		color: white;
+}
+#nw{
+
+height: 18px;
+}
+#newElementId{
+
+	margin-left: 25%
+}
+.image-upload > input
+{
+    display:none;
+}
+
+.image-upload img
+{
+    width: 80px;
+    cursor: pointer;
+        border: 1px solid;
+}
+img
+{
+    width: 80px;
+    cursor: pointer;
+        border: 1px solid;
+}
+.css-serial {
+  counter-reset: serial-number;  /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+  counter-increment: serial-number;  /* Increment the serial number counter */
+  content: counter(serial-number);  /* Display the counter */
+}
+input[type=button]{
+ border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    background: #0a9ef7;
+    outline: none;
+    transition:0.5s;
+}
+input[type=button]:hover {
+	color:black;
+	background: white;
+	transition:0.5s;
+}
+body {
+	background: #FFF;
+	color: #000;
+	font: normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin: 10px;
+	padding: 0
+}
+table, td, a {
+	color: #000;
+	font: normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif
+}
+
+h1 {
+	font: normal normal 18px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin: 0 0 5px 0
+}
+
+h2 {
+	font: normal normal 16px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	margin: 0 0 5px 0
+}
+
+h3 {
+	font: normal normal 13px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #008000;
+	margin: 0 0 15px 0
+}
+div.tableContainer {
+	clear: both;
+	
+	height: 200px;
+	overflow: auto;
+	width: 50%;
+}
+html>body div.tableContainer {
+	overflow: hidden;
+	width: 75%;
+}
+div.tableContainer table {
+	float: left;
+
+}
+html>body div.tableContainer table {
+	/* width: 756px */
+}
+thead.fixedHeader tr {
+	position: relative;
+}
+thead.fixedHeader th {
+	background: #C96;
+	border-left: 1px solid #EB8;
+	border-right: 1px solid #B74;
+	border-top: 1px solid #EB8;
+	font-weight: normal;
+	padding: 4px 3px;
+	text-align: center;
+
+}
+html>body tbody.scrollContent {
+	display: block;
+	height: 262px;
+	overflow: auto;
+	width: 75%
+}
+html>body thead.fixedHeader {
+	display: table;
+	overflow: auto;
+	width: 75%;
+}
+tbody.scrollContent td, tbody.scrollContent tr.normalRow td {
+	background: #FFF;
+	border-bottom: none;
+	border-left: none;
+	border-right: 1px solid #CCC;
+	border-top: 1px solid #DDD;
+	padding: 2px 3px 3px 4px
+}
+th{text-align: center;}
+
+
+tbody.scrollContent tr.alternateRow td {
+	background: #EEE;
+	border-bottom: none;
+	border-left: none;
+	border-right: 1px solid #CCC;
+	border-top: 1px solid #DDD;
+	padding: 2px 3px 3px 4px
+}
+
+@media screen and (max-width:600px) {
+	.container,.col-25,.col-75,.col-50,.col-100,.col-10,.col-20{
+		width:100%;
+		margin-top:0;
+		text-align:left;
+	}	
+}
+	</style>
+ 
+<script type="text/javascript">
+
+  function cloneRow() {
+      var row = document.getElementById("aaa"); 
+      var table = document.getElementById("a5"); 
+      var clone = row.cloneNode(true); 
+      table.appendChild(clone); 
+    }
+function deleteRow(a) {
+  document.getElementById("a5").deleteRow(a);
+}
+
+function myFunction(a) {
+	var s=a.parentNode.parentNode.rowIndex
+	var fReader = new FileReader();
+	fReader.readAsDataURL(a.files[0]);
+	fReader.onloadend = function(event){
+	var img = document.getElementById("a5").rows[s].cells[3].firstChild;
+	img.src = event.target.result;
+	}
+}
+</script>
+<script >
+function sendinfo(a){
+	 var x=a.rowIndex;
+	 var s=document.getElementById('tb');
+	 var r1=s.rows[x].cells.length;
+	 for(var i=0;i<r1;i++){
+		 document.getElementById('a'+i).value=s.rows[x].cells[i].innerHTML;
+		 
+	 }
+	document.getElementById("sve").value = 'Update';
+}
+</script>
+</head>
+<body style="background-color: azure;">
+	 <form action="event" method="post" enctype="multipart/form-data" style="width: 1000px;">
+	<center> <h1> <P style="    margin-left: -12pc;">Event & Activity Details</P></h1></center>
+	<div class="col-100" id="ss">
+		<div class="col-25" style="display: none;"> no</div>
+		<div class="col-75" style="display: none;"> <input type="text" name="no" autocomplete="off" id="a0"></div>
+		<div class="col-25"> Event Name </div>
+		<div class="col-75"> <input type="text" name="nm" autocomplete="off" id="a1"></div>
+		<div class="col-25"> Event title </div>
+		<div class="col-75"> <input type="text" name="tit"  autocomplete="off" id="a2"></div>
+		<div class="col-25"> Event date </div>
+		<div class="col-75"> <input type="date" name="dt"  autocomplete="off" id="a3"></div>
+		<div class="col-25"> Event Description </div>
+		<div class="col-75"> <input type="text" name="desc"  autocomplete="off" id="a4"></div>
+
+	</div>
+
+	<div > <input type="submit" name="btn" value="save" id="sve" style=" width: 68px;height: 4vh;border: none;outline: none; cursor: pointer;margin-top: 1%;">
+		 <input type="submit" name="btn" value="Delete" id="" style=" width: 68px;height: 4vh;border: none;outline: none; cursor: pointer;margin-top: 1%;">
+	</div>
+<br><br> <br>
+
+
+<div id="tableContainer" class="tableContainer" style="margin-left: 6%;">
+<table border="0" cellpadding="0" cellspacing="0" width="115%" class="scrollTable" id="tb">
+<thead class="fixedHeader" >
+	<tr>
+		<th width="29%">Event Name</th>
+		<th width="24%">Event title</th>
+		<th width="16%">Event date</th>
+		<th width="30%">Event Description</th>
+	</tr>
+</thead>
+<tbody class="scrollContent">
+
+	<tr onclick="sendinfo(this)">
+	<td style="width: 182px;display: none;" ><%=rs.getString("auto_no")%></td>
+		<td style="width: 182px;" >11111</td>
+		<td style="width: 149px;" >11111</td>
+		<td style="width: 95px;" >11111</td>
+		<td style="width: 187px;" >111111></td>
+	</tr>
+
+	<tr onclick="sendinfo(this)">
+	<td style="width: 182px;display: none;" ><%=rs.getString("auto_no")%></td>
+		<td style="width: 182px;" >11111</td>
+		<td style="width: 149px;" >11111</td>
+		<td style="width: 95px;" >11111</td>
+		<td style="width: 187px;" >111111></td>
+	</tr>
+
+	<tr onclick="sendinfo(this)">
+	<td style="width: 182px;display: none;" ><%=rs.getString("auto_no")%></td>
+		<td style="width: 182px;" >2222</td>
+		<td style="width: 149px;" >2222</td>
+		<td style="width: 95px;" >2222</td>
+		<td style="width: 187px;" >22222></td>
+	</tr>
+
+	<tr onclick="sendinfo(this)">
+	<td style="width: 182px;display: none;" ><%=rs.getString("auto_no")%></td>
+		<td style="width: 182px;" >333</td>
+		<td style="width: 149px;" >33333</td>
+		<td style="width: 95px;" >33333</td>
+		<td style="width: 187px;" >33333></td>
+	</tr>
+
+	<tr onclick="sendinfo(this)">
+	<td style="width: 182px;display: none;" ><%=rs.getString("auto_no")%></td>
+		<td style="width: 182px;" >4444</td>
+		<td style="width: 149px;" >4444</td>
+		<td style="width: 95px;" >444</td>
+		<td style="width: 187px;" >44444></td>
+	</tr>
+
+
+</tbody>
+</table>
+</div>
+
+	</form>
+<!--<p style="color: red;font-size: 15px;"> ${param.msg} </p>-->
+</body>
+</html>
